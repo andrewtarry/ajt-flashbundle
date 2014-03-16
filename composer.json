@@ -1,0 +1,28 @@
+{
+    "name": "ajt/flashbundle",
+    "description": "Symfony bundle for for managing flash messages",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Tarry",
+            "email": "andrew@andrewtarry.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "symfony/framework-bundle": "*",
+        "symfony/http-foundation": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        "mockery/mockery": "0.9.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
