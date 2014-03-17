@@ -1,6 +1,8 @@
 Flash Bundle
 ============
 
+[![Build Status](https://travis-ci.org/andrewtarry/ajt-flashbundle.png?branch=master)](https://travis-ci.org/andrewtarry/ajt-flashbundle)
+
 The AJT Flash Bundle will manage the use of Symfony flash messages with a simple API.
 
 Usage
