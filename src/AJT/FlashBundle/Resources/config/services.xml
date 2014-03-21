@@ -8,6 +8,7 @@
 
         <!-- Flash Class-->
         <parameter key="ajt.flash.class">AJT\FlashBundle\Flash\Flash</parameter>
+        <parameter key="ajt.flash.translate.class">AJT\FlashBundle\Flash\TranslationFlash</parameter>
 
     </parameters>
 
@@ -16,6 +17,11 @@
         <!-- Flash Service -->
         <service id="ajt.flash" class="%ajt.flash.class%" >
             <argument type="service" id="session" />
+        </service>
+
+        <service id="ajt.flash.translate" class="%ajt.flash.translate.class%">
+            <argument type="service" id="session" />
+            <argument type="service" id="translator" />
         </service>
 
     </services>

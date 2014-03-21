@@ -1,13 +1,23 @@
 <?php
 namespace AJT\FlashBundle\Tests\Flash;
 
-use AJT\FlashBundle\Flash\Flash;
-use PHPUnit_Framework_TestCase;
+use AJT\FlashBundle\Flash\TranslationFlash;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Translation\TranslatorInterface;
 
-class FlashTest extends PHPUnit_Framework_Testcase {
+class TranslationTest extends \PHPUnit_Framework_TestCase
+{
 
+    /**
+     * @var \Mockery\MockInterface
+     */
     private $session;
+
+    /**
+     * @var \Mockery\MockInterface
+     */
+    private $trans;
+
     private $flash;
 
     public function setUp()
@@ -15,21 +25,15 @@ class FlashTest extends PHPUnit_Framework_Testcase {
         $this->session = \Mockery::mock(Session::class);
         $this->session->shouldReceive('getFlashBag->add')->once();
 
-        $this->flash = new Flash($this->session);
+        $this->trans = \Mockery::mock(TranslatorInterface::class);
+        $this->trans->shouldReceive('trans')->once()->andReturn('message');
+
+        $this->flash = new TranslationFlash($this->session, $this->trans);
     }
 
     public function tearDown()
     {
         \Mockery::close();
-    }
-
-    /**
-     * @test
-     * @group unit
-     */
-    public function set()
-    {
-        $this->flash->set('OK', 'error');
     }
 
     /**
