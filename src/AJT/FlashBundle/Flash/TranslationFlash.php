@@ -4,6 +4,11 @@ namespace AJT\FlashBundle\Flash;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Translation\TranslatorInterface;
 
+/**
+ * Translator flash
+ *
+ * @package AJT\FlashBundle\Flash
+ */
 class TranslationFlash extends Flash
 {
 
@@ -24,34 +29,11 @@ class TranslationFlash extends Flash
 
     /**
      * @param string $message
+     * @param string $type
      */
-    public function success($message)
+    public function set($message, $type)
     {
-        parent::success($this->translator->trans($message));
+        parent::set($this->translator->trans($message), $type);
     }
 
-    /**
-     * @param string $message
-     */
-    public function error($message)
-    {
-        parent::error($this->translator->trans($message));
-    }
-
-    /**
-     * @param string $message
-     */
-    public function info($message)
-    {
-        parent::info($this->translator->trans($message));
-    }
-
-    /**
-     * @param string $message
-     */
-    public function warning($message)
-    {
-        parent::warning($this->translator->trans($message));
-    }
-
-} 
+}
