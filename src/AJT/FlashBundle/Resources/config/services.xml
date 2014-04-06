@@ -10,6 +10,9 @@
         <parameter key="ajt.flash.class">AJT\FlashBundle\Flash\Flash</parameter>
         <parameter key="ajt.flash.translate.class">AJT\FlashBundle\Flash\TranslationFlash</parameter>
 
+        <!-- Event Listener -->
+        <parameter key="ajt.flash.loader.class">AJT\FlashBundle\Loader\FlashLoader</parameter>
+
     </parameters>
 
     <services>
@@ -22,6 +25,12 @@
         <service id="ajt.flash.translate" class="%ajt.flash.translate.class%">
             <argument type="service" id="session" />
             <argument type="service" id="translator" />
+        </service>
+
+        <!-- Event Listener -->
+        <service id="ajt.flash.loader" class="%ajt.flash.loader.class%">
+            <argument type="service" id="ajt.flash.translate" />
+            <tag name="kernel.event_listener" event="flash.set" method="load" />
         </service>
 
     </services>

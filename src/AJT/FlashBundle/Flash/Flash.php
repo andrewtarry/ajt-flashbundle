@@ -38,7 +38,7 @@ class Flash implements FlashInterface
      */
     public function success($message)
     {
-        $this->set($message, 'success');
+        $this->set($message, self::SUCCESS);
     }
 
     /**
@@ -48,7 +48,7 @@ class Flash implements FlashInterface
      */
     public function error($message)
     {
-        $this->set($message, 'danger');
+        $this->set($message, self::ERROR);
     }
 
     /**
@@ -58,7 +58,7 @@ class Flash implements FlashInterface
      */
     public function info($message)
     {
-        $this->set($message, 'info');
+        $this->set($message, self::INFO);
     }
 
     /**
@@ -68,6 +68,6 @@ class Flash implements FlashInterface
      */
     public function warning($message)
     {
-        $this->set($message, 'warning');
+        $this->set($message, self::WARNING);
     }
 }

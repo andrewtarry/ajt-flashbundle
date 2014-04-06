@@ -9,6 +9,26 @@ interface FlashInterface
 {
 
     /**
+     * Success flash message
+     */
+    const SUCCESS = 'success';
+
+    /**
+     * Error flash message
+     */
+    const ERROR = 'danger';
+
+    /**
+     * Info flash message
+     */
+    const INFO = 'info';
+
+    /**
+     * Warning flash message
+     */
+    const WARNING = 'warning';
+
+    /**
      * Set a flash message
      *
      * @param string $message
