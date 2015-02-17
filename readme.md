@@ -35,6 +35,7 @@ class MyClass
 }
 ```
 
+
 Use the twig fragment in your template.
 
 ```Twig
