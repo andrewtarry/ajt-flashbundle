@@ -16,7 +16,7 @@ interface FlashInterface
     /**
      * Error flash message
      */
-    const ERROR = 'danger';
+    const ERROR = 'error';
 
     /**
      * Info flash message
