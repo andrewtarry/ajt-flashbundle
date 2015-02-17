@@ -28,7 +28,7 @@ class CssLoader extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('ajt.flash.css', array($this, 'getCss'))
+            new \Twig_SimpleFunction('ajt_flash_css', array($this, 'getCss'))
         );
     }
 
