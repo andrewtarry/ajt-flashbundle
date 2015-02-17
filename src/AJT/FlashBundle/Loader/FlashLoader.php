@@ -33,4 +33,4 @@ class FlashLoader
         $this->flash->set($event->getMessage(), $event->getType());
     }
 
-} 
+}

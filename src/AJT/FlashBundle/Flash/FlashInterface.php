@@ -63,5 +63,4 @@ interface FlashInterface
      * @param string $message
      */
     public function warning($message);
-
-} 
+}

@@ -1,7 +1,6 @@
 <?php
 namespace AJT\FlashBundle\Event;
 
-use AJT\FlashBundle\Flash\FlashInterface;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
@@ -79,4 +78,4 @@ class FlashEvent extends Event
         }
     }
 
-} 
+}

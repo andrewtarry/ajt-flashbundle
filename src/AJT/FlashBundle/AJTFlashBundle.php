@@ -16,4 +16,4 @@ class AJTFlashBundle extends Bundle
         $container->addCompilerPass(new CoreCssPass());
         $container->addCompilerPass(new CustomCssPass());
     }
-} 
+}
