@@ -1,7 +1,8 @@
 Flash Bundle
 ============
 
-[![Build Status](https://travis-ci.org/andrewtarry/ajt-flashbundle.png?branch=master)](https://travis-ci.org/andrewtarry/ajt-flashbundle)[![SensioLabsInsight](https://insight.sensiolabs.com/projects/d78549b1-1645-4ce7-884e-50df7d703063/small.png)](https://insight.sensiolabs.com/projects/d78549b1-1645-4ce7-884e-50df7d703063)
+[![Build Status](https://travis-ci.org/andrewtarry/ajt-flashbundle.png?branch=master)](https://travis-ci.org/andrewtarry/ajt-flashbundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/d78549b1-1645-4ce7-884e-50df7d703063/big.png)](https://insight.sensiolabs.com/projects/d78549b1-1645-4ce7-884e-50df7d703063)
 
 The AJT Flash Bundle will manage the use of Symfony flash messages with a simple API.
 
