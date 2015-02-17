@@ -1,5 +1,4 @@
 <?php
-
 namespace AJT\FlashBundle\Tests\Loader;
 
 use AJT\FlashBundle\Event\FlashEvent;
@@ -17,7 +16,7 @@ class FlashLoaderTest extends \PHPUnit_Framework_TestCase {
 
     public function setUp()
     {
-        $this->flash = m::mock(FlashInterface::class);
+        $this->flash = m::mock('AJT\FlashBundle\Flash\FlashInterface');
     }
 
     /**
@@ -26,13 +25,14 @@ class FlashLoaderTest extends \PHPUnit_Framework_TestCase {
      */
     public function loadFlash()
     {
-        $event = m::mock(FlashEvent::class);
+        $event = m::mock('AJT\FlashBundle\Event\FlashEvent');
         $event->shouldReceive('getMessage')->once()->andReturn('A Message');
         $event->shouldReceive('getType')->once()->andReturn(FlashInterface::SUCCESS);
 
         $this->flash->shouldReceive('set')->once()->andReturnNull();
 
-        (new FlashLoader($this->flash))->load($event);
+        $loader = new FlashLoader($this->flash);
+        $loader->load($event);
     }
 
 }

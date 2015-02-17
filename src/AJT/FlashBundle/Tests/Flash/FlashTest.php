@@ -12,7 +12,7 @@ class FlashTest extends PHPUnit_Framework_Testcase {
 
     public function setUp()
     {
-        $this->session = \Mockery::mock(Session::class);
+        $this->session = \Mockery::mock('Symfony\Component\HttpFoundation\Session\Session');
         $this->session->shouldReceive('getFlashBag->add')->once();
 
         $this->flash = new Flash($this->session);

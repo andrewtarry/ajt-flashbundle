@@ -22,10 +22,10 @@ class TranslationTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->session = \Mockery::mock(Session::class);
+        $this->session = \Mockery::mock('Symfony\Component\HttpFoundation\Session\Session');
         $this->session->shouldReceive('getFlashBag->add')->once();
 
-        $this->trans = \Mockery::mock(TranslatorInterface::class);
+        $this->trans = \Mockery::mock('Symfony\Component\Translation\TranslatorInterface');
         $this->trans->shouldReceive('trans')->once()->andReturn('message');
 
         $this->flash = new TranslationFlash($this->session, $this->trans);

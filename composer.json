@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.3",
         "symfony/framework-bundle": "*",
         "symfony/http-foundation": "*"
     },

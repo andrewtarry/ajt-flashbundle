@@ -1,5 +1,4 @@
 <?php
-
 namespace AJT\FlashBundle\Tests\Event;
 
 use AJT\FlashBundle\Event\FlashEvent;
@@ -28,7 +27,7 @@ class FlashEventTest extends \PHPUnit_Framework_TestCase {
      */
     public function invalidType()
     {
-        $this->setExpectedException(InvalidArgumentException::class);
+        $this->setExpectedException('InvalidArgumentException');
         new FlashEvent('', 'other');
     }
 

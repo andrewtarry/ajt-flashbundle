@@ -68,7 +68,7 @@ class FlashEvent extends Event
      */
     private function validateType($type)
     {
-        $reflectedFlash = new \ReflectionClass(FlashInterface::class);
+        $reflectedFlash = new \ReflectionClass('AJT\FlashBundle\Flash\FlashInterface');
         $constants = $reflectedFlash->getConstants();
 
         if(in_array($type, $constants))
