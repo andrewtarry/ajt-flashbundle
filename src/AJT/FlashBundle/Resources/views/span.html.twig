@@ -1,9 +1,9 @@
 {#
-    Description: Flash Templates
+    Description: Flash Templates using a span rather than a div
     Author: Andrew Tarry
 #}
 {% for type, messages in app.session.getFlashBag().all() %}
     {% for message in messages %}
-        <div class="{{ ajt.flash.twig.css(type) }}">{{ message }}</div>
+        <span class="{{ ajt.flash.twig.css(type) }}">{{ message }}</span>
     {% endfor %}
 {% endfor %}

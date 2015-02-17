@@ -20,9 +20,14 @@ class AJTFlashExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter('ajt.flash.config.default_class', $config['default_class']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        $container->setParameter('ajt.flash.config.core', $config['core']);
+        $container->setParameter('ajt.flash.config.custom', $config['custom']);
     }
 }

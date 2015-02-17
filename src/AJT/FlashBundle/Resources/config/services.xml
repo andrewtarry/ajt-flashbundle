@@ -13,9 +13,20 @@
         <!-- Event Listener -->
         <parameter key="ajt.flash.loader.class">AJT\FlashBundle\Loader\FlashLoader</parameter>
 
+        <!-- Type Manager Class -->
+        <parameter key="ajt.flash.type.manager.class">AJT\FlashBundle\Type\TypeMapper</parameter>
+
+        <!-- Twig -->
+        <parameter key="ajt.flash.twig.css.class">AJT\FlashBundle\Twig\CssLoader</parameter>
+
     </parameters>
 
     <services>
+
+        <!-- Type Manager -->
+        <service id="ajt.flash.type.manager" class="%ajt.flash.type.manager.class%" >
+            <argument>%ajt.flash.config.default_class%</argument>
+        </service>
 
         <!-- Flash Service -->
         <service id="ajt.flash" class="%ajt.flash.class%" >
@@ -31,6 +42,12 @@
         <service id="ajt.flash.loader" class="%ajt.flash.loader.class%">
             <argument type="service" id="ajt.flash.translate" />
             <tag name="kernel.event_listener" event="flash.set" method="load" />
+        </service>
+
+        <!-- Twig -->
+        <service id="ajt.flash.twig.css.class" class="%ajt.flash.twig.css.class%" public="false">
+            <argument type="service" id="ajt.flash.type.manager" />
+            <tag name="twig.extension" />
         </service>
 
     </services>
