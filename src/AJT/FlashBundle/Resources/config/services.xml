@@ -45,8 +45,14 @@
         </service>
 
         <!-- Twig -->
-        <service id="ajt.flash.twig.css.class" class="%ajt.flash.twig.css.class%" public="false">
+        <service id="ajt.flash.twig.css" class="%ajt.flash.twig.css.class%" public="false">
             <argument type="service" id="ajt.flash.type.manager" />
+            <tag name="twig.extension" />
+        </service>
+
+        <service id="ajt.flash.twig.loader" class="AJT\FlashBundle\Twig\FlashLoader" public="false">
+            <argument type="service" id="session" />
+            <argument type="service" id="twig" />
             <tag name="twig.extension" />
         </service>
 

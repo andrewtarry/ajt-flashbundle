@@ -4,6 +4,6 @@
 #}
 {% for type, messages in app.session.getFlashBag().all() %}
     {% for message in messages %}
-        <span class="{{ ajt_flash_css(type) }}">{{ message }}</span>
+        {{ include('AJTFlashBundle::single.html.twig', { 'element': 'span', 'type': type, 'message': message }) }}
     {% endfor %}
 {% endfor %}
