@@ -38,7 +38,7 @@ class FlashLoader extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('ajt_flash_css', [$this, 'display'], ['is_safe' => ['html']])
+            new \Twig_SimpleFunction('ajt_flash', [$this, 'display'], ['is_safe' => ['html']])
         ];
     }
 

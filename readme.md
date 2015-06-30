@@ -37,16 +37,16 @@ class MyClass
 ```
 
 
-Use the twig fragment in your template.
+Use the twig function in your template,
 
 ```Twig
-{{ include('AJTFlashBundle::flash.html.twig') }}
+{{ ajt_flash() }}
 ```
-    
-or 
+
+Or if you want to only display some types of message
 
 ```Twig
-{{ include('AJTFlashBundle::span.html.twig') }}
+{{ ajt_flash('error') }}
 ```
 	
 Standard Types
